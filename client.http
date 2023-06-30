@@ -1,0 +1,105 @@
+
+### REGISTER USER ###
+POST http://localhost:1999/register
+Content-Type: application/json
+
+{
+ "username": "user",
+ "password": "user12345",
+ "name": "User",
+ "email": "user@gmail.com"
+
+}
+
+###
+
+### LOGIN USER ###
+POST http://localhost:1999/login
+Content-Type: application/json
+
+{
+ "username": "user",
+ "password": "user12345",
+  
+
+}
+###
+
+### Create a visitor ###
+POST http://localhost:1999/visitorData
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllYTczOWY4OThlMzc1MjljOGU4ZDQiLCJ1c2VybmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InVzZXIxMjM0NSIsIm5hbWUiOiJVc2VyIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY4ODEyMDI4OH0.qjtC3BA9AvJm-3ucKM-af3tAz9lYTY3Z6X-s0adbaQE
+
+
+{
+  "visitorID": "V12",
+  "name": "Fendi",
+  "phoneNumber": "0132451979",
+  "visitingPurpose": "Visit Friends",
+  "visitingPerson": "Aisyah",
+  "visitedDate": "2023/06/5",
+  "timeIn": "10:00 AM",
+  "timeOut": "12:00 AM",
+  "vehicleType": "Car"
+  
+}
+###
+
+
+
+
+### Delete a visitor ###
+DELETE http://localhost:1999/delete-visitor/649eabfcf898e37529c8e8d9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllYTczOWY4OThlMzc1MjljOGU4ZDQiLCJ1c2VybmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InVzZXIxMjM0NSIsIm5hbWUiOiJVc2VyIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY4ODEyMDQ5M30.gZl-uFLdd4PFHjmL93MuOVfuM4xmzQniVJH2hG7dGS8
+
+
+
+### View all visitor ###
+GET http://localhost:1999/visitors
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllYTczOWY4OThlMzc1MjljOGU4ZDQiLCJ1c2VybmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InVzZXIxMjM0NSIsIm5hbWUiOiJVc2VyIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY4ODEyMDg1OH0.rr24BHaYUUW3rhvUZiyclyxzJ1QKYCHwIglGACZOuTQ
+
+
+ 
+### Update a visitor ###
+PATCH http://localhost:1999/update-visitors/649ec2d322f354f87ab99aac
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllYTczOWY4OThlMzc1MjljOGU4ZDQiLCJ1c2VybmFtZSI6InVzZXIiLCJwYXNzd29yZCI6InVzZXIxMjM0NSIsIm5hbWUiOiJVc2VyIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY4ODEyMDg1OH0.rr24BHaYUUW3rhvUZiyclyxzJ1QKYCHwIglGACZOuTQ
+
+
+{
+  "visitorID": "V12",
+  "name": "Fendi",
+  "phoneNumber": "0132447592",
+  "visitingPurpose": "Visit Friends",
+  "visitingPerson": "Aisyah",
+  "visitedDate": "2023/06/5",
+  "timeIn": "10:00 AM",
+  "timeOut": "12:00 AM",
+  "vehicleType": "Car"
+}
+###
+
+### Register Security ###
+POST http://localhost:1999/security-register
+Content-Type: application/json
+
+{
+  "securityID":"s02",
+  "name":"david",
+  "workshift":"Morning",
+  "date": "2023/09/09",
+  "timeIn": "07:00 AM",
+  "timeOut": "18:00 PM"
+  
+}
+###
+
+### Login Security ###
+POST http://localhost:1999/security-login
+Content-Type: application/json 
+
+{
+ "name": "david",
+ "password": "12345"
+}
+###

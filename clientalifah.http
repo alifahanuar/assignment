@@ -1,0 +1,104 @@
+###REGISTER USER###
+POST http://localhost:1999/register
+Content-Type: application/json
+
+{
+"username": "alifah",
+"password": "12345",
+"name": "Alifah",
+"email": "alifah@gmail.com"
+}
+
+###LOGIN USER###
+POST http://localhost:1999/login
+Content-Type: application/json
+
+{
+"username": "alifah",
+"password": "12345"
+}
+
+###Create a visitor###
+POST http://localhost:1999/visitorData
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMTY0fQ.vithnx7c0JADAjWGsP35J2cBftY53ANUX7GyruB0CtY
+
+{
+"visitorID": "V15",
+"name": "Sylar",
+"phoneNumber": "0132451979",
+"visitingPurpose": "Visit Friends",
+"visitingPerson": "Alifah",
+"visitedDate": "2023/06/5",
+"timeIn": "10:00 AM",
+"timeOut": "12:00 AM",
+"vehicleType": "Car"
+}
+
+###Delete a visitor###
+DELETE http://localhost:1999/visitor/649ee12ff37e56b57d102fde
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMjQ5fQ.SXN5DmcY6QZvgoF4F-kzWfaJ-ilqCYty292LXo72aOQ
+
+###View all visitors###
+GET http://localhost:1999/allvisitor
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+###View all block###
+GET http://localhost:1999/block
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+###View all hostel###
+GET http://localhost:1999/hostel
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+###View all vehicle###
+GET http://localhost:1999/vehicle
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+###View acess info###
+GET http://localhost:1999/visitor/64955832950089db75efa76c/access-info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+###View visitor###
+GET http://localhost:1999/visitors/649f03177e04bf58bc4ed7c5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+
+
+###Update a visitor###
+PUT http://localhost:1999/visitor/64955819950089db75efa76b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwNDA4fQ.Wa930Bae9V8pQistUZjMGUNjI_3lYPtyUG8RNqplX0A
+
+{
+"visitorID": "v08",
+"name": "Tini",
+"phoneNumber": "0132447592",
+"visitingPurpose": "Visit friends",
+"visitingPerson": "Amirah",
+"visitedDate": "2023/03/18",
+"timeIn": "16:00 PM",
+"timeOut": "17:15 PM",
+"vehicleType": "Car"
+}
+
+###Register Security###
+POST http://localhost:1999/security-register
+Content-Type: application/json
+
+{
+    "securityID": "s04",
+    "name": "sylar",
+    "workshift": "Night",
+    "duration": "2 hours",
+    "date": "2023/12/12"
+
+}
+
+###Login Security###
+POST http://localhost:1999/security-login
+Content-Type: application/json
+
+{
+    "securityID": "s04",
+    "name": "sylar"
+}
