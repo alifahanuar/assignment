@@ -26,7 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhN
 {
 "visitorID": "V15",
 "name": "Sylar",
-"phoneNumber": "0132451979",
+"phoneNumber": "0132457286",
 "visitingPurpose": "Visit Friends",
 "visitingPerson": "Alifah",
 "visitedDate": "2023/06/5",
@@ -34,13 +34,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhN
 "timeOut": "12:00 AM",
 "vehicleType": "Car"
 }
-
+cd
 ###Delete a visitor###
 DELETE http://localhost:1999/visitor/649ee12ff37e56b57d102fde
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMjQ5fQ.SXN5DmcY6QZvgoF4F-kzWfaJ-ilqCYty292LXo72aOQ
 
 ###View all visitors###
-GET http://localhost:1999/allvisitor
+GET http://localhost:1999/allvisitors
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
 
 ###View all block###
@@ -55,19 +55,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhN
 GET http://localhost:1999/vehicle
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
 
-###View acess info###
-GET http://localhost:1999/visitor/64955832950089db75efa76c/access-info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+###View access info###
+GET http://localhost:1999/visitor-accessinfo
+Content-Type: application/json
+
+{
+    "phoneNumber": "0132457286"
+}
+
+
 
 ###View visitor###
-GET http://localhost:1999/visitors/649f03177e04bf58bc4ed7c5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMzEyfQ.47S06XB1o3OZaY09_Ha9bh_cymOuTsiiaWIerNXFf1I
+GET http://localhost:1999/visitor/64949c93ccdc18c8b66d30c3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTU1MjY4fQ.rlP7C83azdw7gzFEyDmZhdXUqKcicsBtXuXchozYe0E
 
 
 ###Update a visitor###
 PUT http://localhost:1999/visitor/64955819950089db75efa76b
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwNDA4fQ.Wa930Bae9V8pQistUZjMGUNjI_3lYPtyUG8RNqplX0A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTU1MjY4fQ.rlP7C83azdw7gzFEyDmZhdXUqKcicsBtXuXchozYe0E
 
 {
 "visitorID": "v08",

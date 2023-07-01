@@ -204,7 +204,7 @@ app.delete('/visitor/:id', verifyToken, async (req, res) => {
 });
 
 // View all visitors
-app.get('/allvisitor', async (req, res) => {
+app.get('/allvisitors', async (req, res) => {
   try {
     const visitors = await visitorsCollection.find().toArray();
     res.send(visitors);
@@ -259,38 +259,41 @@ app.post('/security/logout', (req, res) => {
 });
 
 // Visitor access information
-app.get('/visitor/:id/access-info', async (req, res) => {
+app.get('/visitor-accessinfo', (req, res) => {
+  const phoneNumber = req.body.phoneNumber;
+
+  visitorsCollection
+    .find({ phoneNumber })
+    .toArray()
+    .then((visitors) => {
+      if (visitors.length === 0) {
+        res.send('No visitors found with the given contact number');
+      } else {
+        res.send(visitors);
+      }
+    })
+    .catch((error) => {
+      console.error('Error retrieving visitors by contact:', error);
+      res.status(500).send('An error occurred while retrieving visitors by contact');
+    });
+});
+
+// View a specific visitor
+app.get('/visitor/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
-    const visitor = await visitorsCollection.findOne({ _id: id });
+    const visitorObjectId = new ObjectId(id);
+    const visitor = await visitorsCollection.findOne({ _id: visitorObjectId });
 
-    if (visitor) {
-      res.send(visitor.accessInfo);
-    } else {
-      res.status(404).send('Visitor not found');
+    if (!visitor) {
+      return res.status(404).send('Visitor not found');
     }
+
+    res.send(visitor);
   } catch (error) {
-    console.error('Error retrieving access information:', error);
-    res.status(500).send('Error retrieving access information');
-  }
-});
-
-//view visitor
-app.get('/visitors/:id', async (req, res) => {
-  const { _id } = req.params._id;
-
-  try {
-    const visitors = await visitorsCollection.findOne({ _id: ObjectId(_id) });
-
-    if (visitor) {
-      res.send(visitors);
-    } else {
-      res.status(404).send('Visitor not found');
-    }
-  } catch (error) {
-    console.error('Error retrieving visitor:', error);
-    res.status(500).send('Error retrieving visitor');
+    console.error('Error viewing visitor:', error);
+    res.status(500).send('Error viewing visitor');
   }
 });
 
