@@ -3,9 +3,9 @@ POST http://localhost:1999/register
 Content-Type: application/json
 
 {
-"username": "alifah",
+"username": "waa",
 "password": "12345",
-"name": "Alifah",
+"name": "wajihah",
 "email": "alifah@gmail.com"
 }
 
@@ -14,14 +14,15 @@ POST http://localhost:1999/login
 Content-Type: application/json
 
 {
-"username": "alifah",
+"username": "waa",
 "password": "12345"
 }
 
 ###Create a visitor###
 POST http://localhost:1999/visitorData
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTMwMTY0fQ.vithnx7c0JADAjWGsP35J2cBftY53ANUX7GyruB0CtY
+Authorization: Bearer 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE5MzViZjIwOGQwMmUxZjRlMTVkOGYiLCJ1c2VybmFtZSI6IndhYSIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoid2FqaWhhaCIsImVtYWlsIjoiYWxpZmFoQGdtYWlsLmNvbSIsImlhdCI6MTcwMzIwODc4M30.IqF6PH9gB7NRaNN0IVnjfAbZxjCyFsZgQ3Nxe6D7sUA
 
 {
 "visitorID": "V15",

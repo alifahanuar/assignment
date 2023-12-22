@@ -1,17 +1,33 @@
 
 const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
+//const { MongoClient, ObjectId } = require('mongodb');
 const app = express();
 const port = 1999;
 const jwt = require('jsonwebtoken');
 
+//+
+const { ObjectId } = require('mongodb');
+const cors = require('cors');
+
 app.use(express.json());
 
+app.use(cors());
+
 // MongoDB connection URL
-const uri = 'mongodb+srv://Alifah:PcKMcN2kbv0KjaWm@cluster0.ali2uob.mongodb.net/VisitorManagement';
+const { MongoClient, ServerApiVersion, Admin } = require('mongodb');
+const uri = 'mongodb+srv://Alifah:rNmvKWZHRKxEnsGl@cluster0.ali2uob.mongodb.net/';
 
 // Create a new MongoClient
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+
 
 // Connect to MongoDB
 client.connect()
@@ -30,6 +46,25 @@ const securityCollection = db.collection('security');
 const hostelCollection = db.collection('hostel');
 const blockCollection = db.collection('block');
 const vehicleCollection = db.collection('vehicle');
+
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerOptions = {
+ swaggerDefinition: {
+    info: {
+      title: 'API Information',
+      version: '1.0.0',
+      description: 'Apartment Visitor Management System',
+    },
+    servers: ['http://localhost:2000'],
+ },
+ apis: ['index.js'], // change to the path of your api file
+};
+
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+app
+
 
 function login(reqUsername, reqPassword) {
   return usersCollection.findOne({ username: reqUsername, password: reqPassword })
@@ -125,6 +160,34 @@ app.post('/register', (req, res) => {
   });
 });
 
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Log in a user
+ *     description: Logs in a user with the provided credentials.
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: user
+ *         description: The user credentials.
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             username:
+ *               type: string
+ *               description: The username of the user.
+ *             password:
+ *               type: string
+ *               description: The password of the user.
+ *     responses:
+ *       200:
+ *         description: Successfully logged in.
+ *       401:
+ *         description: Invalid username or password.
+ */
 //
 
  //Create a visitor
