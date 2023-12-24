@@ -65,7 +65,6 @@ Content-Type: application/json
 }
 
 
-
 ###View visitor###
 GET http://localhost:1999/visitor/64949c93ccdc18c8b66d30c3
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhNzc1Y2Q0MzNjMzEwZTU2YjAiLCJ1c2VybmFtZSI6ImFsaWZhaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJuYW1lIjoiQWxpZmFoIiwiZW1haWwiOiJhbGlmYWhAZ21haWwuY29tIiwiaWF0IjoxNjg4MTU1MjY4fQ.rlP7C83azdw7gzFEyDmZhdXUqKcicsBtXuXchozYe0E
@@ -87,6 +86,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk4NzhhN
 "timeOut": "17:15 PM",
 "vehicleType": "Car"
 }
+
+
 
 ###Register Security###
 POST http://localhost:1999/security-register
